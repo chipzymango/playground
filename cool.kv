@@ -1,0 +1,89 @@
+<Label>
+	font_size: 32
+	color: (0.1, 0.1, 0.1, 1)
+
+<Grids>
+
+	
+	Label: # this will be the main window color
+		background_color: (0.8, 0.8, 0.8, 1)
+		canvas.before:
+			Color:
+				rgba: self.background_color
+			Rectangle:
+				size: root.size
+				pos: root.pos
+	GridLayout:
+		cols: 1
+		padding: 10
+		spacing: 10
+		size: root.width, root.height
+		# root stands for the Grids class, which
+		# represents the size of the entire application
+		# by default this is not set, so this is needed
+
+
+
+
+		Label:
+			spacing: 20
+			text: "are you ready for..."
+			background_color: (214/255.0, 219/255.0, 255/255.0, 1)
+			canvas.before:
+				Color:
+					rgba: self.background_color
+				Rectangle:
+					size: self.size
+					pos: self.pos
+
+		Label:
+			text: "the peculiar playground."
+			background_color: (255/255.0, 255/255.0, 230/255.0, 1)
+			canvas.before:
+				Color:
+					rgba: self.background_color
+				Rectangle:
+					size: self.size
+					pos: self.pos
+
+		GridLayout:
+			rows: 1 # this means the max amount of rows in this gridlayout
+
+			spacing: 10
+
+			GridLayout:
+				rows: 2
+				Label:
+					text: "cool username:"
+					size_hint: (0.2, 0.2)
+
+				TextInput:
+					id: root.text_info_var
+					multiline: False
+					size_hint: (0.2, 0.2)
+					pos_hint: {'center_y': 0}
+		
+			
+			Label:
+				text: "placeholder1"
+				background_color: (255/255.0, 210/255.0, 210/255.0, 1)
+				canvas.before:
+					Color:
+						rgba: self.background_color
+					Rectangle:
+						size: self.size
+						pos: self.pos
+
+			Button:
+				text: "connect!"
+				#font_size: 20
+				size_hint: (1, 0.2)
+				pos_hint: {'center_x': 0.5}
+				background_normal: ''
+				background_color: (1,1,1,1)#(200/255.0, 255/255.0, 200/255.0, 1)
+				on_press: 
+					root.press() # when button pressed, perform press function in main.py
+					background_normal: ''
+					background_color: (175/255.0, 255/255.0, 175/255.0, 1)
+
+
