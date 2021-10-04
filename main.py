@@ -11,6 +11,7 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty, NumericProperty, StringProperty
+from kivy.core.audio import SoundLoader 
 
 # this is like the root class
 class Grids(Widget):
@@ -19,6 +20,9 @@ class Grids(Widget):
 	#unknown amount of parameters
 	def press(self):
 		print("Button pressed!")
+		sound = SoundLoader.load('assets/button_click.wav')
+		sound.play()
+
 	
 #		# inherit methods to use from the parent class
 #		# run the init method from GridLayout
