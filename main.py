@@ -16,28 +16,10 @@ from kivy.core.audio import SoundLoader
 # this is like the root class
 class Grids(Widget):
 
-	#**kwargs is used to accept
-	#unknown amount of parameters
 	def press(self):
 		print("Button pressed!")
 		sound = SoundLoader.load('assets/button_click.wav')
 		sound.play()
-
-	
-#		# inherit methods to use from the parent class
-#		# run the init method from GridLayout
-#		super(Grids, self).__init__(**kwargs)
-#
-#		# amount of columns / rows used in the program
-#		# each column can store different widgets (button, label etc.)
-#		# this variable belongs to parent class GridLayout
-#		self.rows = 3
-#
-#		# method from the GridLayout parent class
-#		self.add_widget(Label(text="A Playground label!"))
-#		self.add_widget(Label(text="The peliclar playground."))
-#
-#		self.add_widget(Button(text="I am a button!"))
 
 class CoolApp(App):
 
